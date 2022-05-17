@@ -8,7 +8,7 @@ router.get('/:word', (req, res) => {
     var con = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: 'Prsard1997',
+        password: 'password',
         database: 'entries'
     });
 
@@ -18,7 +18,7 @@ router.get('/:word', (req, res) => {
         con.query(`SELECT * FROM entries WHERE word like "${req.params.word}%"`, (err, result) => {
             if (err) throw err;
             res.send(result);
-            console.log(result);
+            // console.log(result);
         });
     });
 });
